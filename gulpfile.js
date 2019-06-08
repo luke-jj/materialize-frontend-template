@@ -67,6 +67,7 @@ function css() {
   return src('src/sass/materialize.scss')
     .pipe(sass())
     .pipe(postcss([ autoprefixer() ]))
+    .pipe(rename({ basename: 'styles'}))
     .pipe(dest('build/css'));
 }
 
